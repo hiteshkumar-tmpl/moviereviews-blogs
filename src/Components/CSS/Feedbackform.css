@@ -1,0 +1,118 @@
+    /* .container {
+    display: grid;
+    /* grid-template-rows: 133px 133px 133px;
+    grid-template-columns: 133px 133px 133px; */
+    /* grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr); 
+
+grid-template-columns: 475.5px 924.5px;
+grid-template-rows: 585.5px 585.5px;
+row-gap: 12px;
+column-gap: 12px;
+color: aliceblue;
+
+}
+.item {
+    background-color: rgb(0, 20, 20);
+    /* height: 122px;
+    width: 122px;
+
+
+}
+.item1 {
+    /* grid-column-start: 1;
+    grid-column-end: 4; 
+    
+    background-color: aqua;
+}
+.formbanner {
+    background-color: rgb(255, 20, 3);
+    align-items: center;
+    justify-items: center;
+}
+.formbanner h2 {
+    height: 379.5px;
+    text-align: center;
+    display: block;
+    font-size: 30px;
+    font-weight: 400;
+    margin-top: 250px;
+}
+.item_footer {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    background-color: blue;
+    margin-right: 50px;
+    background-color: #161515;
+}
+.form {
+    padding-left: 30px;
+    padding-top: 30px;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.firstrow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    height: 58px;
+} 
+.firstrow firstname {
+    font-size: 20px;
+}
+
+/* input {
+    margin-top: 20px;
+    height: 28px;
+    padding: 12px 20px;
+    color: #ffffff;
+    background-color: #161515;
+    outline: none;
+} 
+
+input:hover {
+    border: 1px solid white;
+    color: white;
+    font-weight: bold;
+}
+
+label {
+    margin-top: 15px;
+}
+
+input {
+    width: 20%;
+    border: none;
+    border-bottom: 2px solid white;
+    margin-top: 20px;
+    height: 28px;
+    padding: 12px 20px;
+    color: #ffffff;
+    background-color: #161515;
+    outline: none;
+}
+
+input {
+    width: 100%;
+    background-color: #161515;
+    border-bottom: 2px solid white;
+}
+
+textarea {
+    width: 590px;
+    height: 106px;
+    outline: none;
+    padding: 12px 20px;
+    background-color: #161515;
+    border-bottom: 2px solid white;
+}
+
+button {
+    padding: 10px;
+    color: wheat;
+    background-color: red;
+}
+
+*/

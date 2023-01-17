@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+nav {
+    display: flex;
+    width: 100%;
+    background: rgb(0, 0, 0);
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    padding: 55px 30px;
+}
+
+nav .icon {
+    background-color: red;
+    padding: 20px;
+    margin-left: 20px;
+    /* display: flex;
+    justify-content: flex-start; */
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ol {
+    display: flex;
+    list-style: none;
+    margin: auto;
+    margin-right: 10px;
+}
+
+nav ol li {
+    display: flex;
+    margin: 0px 2px;
+    justify-content: flex-end;
+}
+
+a {
+    font-size: 17px;
+    color: white;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
+nav ol li a:hover {
+    color: red;
+}
+
+.active {
+    color: red;
+}
+
+.searchbox {
+    display: flex;
+    background: black;
+    margin: auto 0;
+    height: 45px;
+    line-height: 35px;
+    padding: 0px 10px;
+}
+
+.searchbox input {
+    border: none;
+    outline: none;
+    background: black;
+    color: white;
+    height: 100%;
+    padding: 0 10px;
+    font-size: 17px;
+    width: 200px;
+}
+
+.searchbox:hover {
+    border: 1px solid white;
+    color: white;
+    font-weight: bold;
+}
+
+nav .searchbox button {
+    color: white;
+    border: none;
+    background: black;
+}
+
+NavLink:active {
+    color: red;
+}
+
+
+/* 
+nav li {
+    text-decoration: none;
+    height: 100px;
+    display: inline-block;
+}
+
+a {
+    padding: 20px;
+    font-size: 17px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+} */

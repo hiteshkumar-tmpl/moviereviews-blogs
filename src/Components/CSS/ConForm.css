@@ -1,0 +1,143 @@
+.main {
+    margin-top: 50px;
+    margin-bottom: 60px;
+    width: 100%;
+    padding: 60px;
+}
+
+.footer_container {
+    display: grid;
+    grid-template-columns: 463.5px 924.5px;
+    row-gap: 12px;
+    column-gap: 40px;
+    color: aliceblue;
+}
+
+.banner {
+    background-color: #EB0000;
+    align-items: center;
+    justify-items: center;
+    /* margin-left: 50px; */
+}
+
+.banner h2 {
+    height: 379.5px;
+    text-align: center;
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    font-weight: bolder;
+    margin-top: 220px;
+}
+
+.mainform {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    background-color: blue;
+    margin-right: 50px;
+    background-color: #161515;
+    align-items: center;
+    justify-content: center;
+}
+
+.form {
+    margin-top: 100px;
+    padding: 0px 100px;
+}
+
+.firstrow {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0px 15px;
+}
+
+.firstname {
+    width: 280px;
+}
+
+.lastname {
+    width: 280px;
+}
+
+.emailbar {
+    display: flex;
+    width: 630px;
+    justify-content: space-evenly;
+    flex-direction: column;
+    margin-left: 70px;
+}
+
+.emailbar email {
+    width: 63px;
+    height: 40px;
+}
+
+.messagebox {
+    display: flex;
+    width: 630px;
+    justify-content: space-evenly;
+    flex-direction: column;
+    margin-left: 70px;
+}
+
+input {
+    height: 40px;
+    padding: 12px 20px;
+    color: #ffffff;
+    background-color: #161515;
+    outline: none;
+}
+
+input:hover {
+    border: 1px solid white;
+    color: white;
+    font-weight: bold;
+}
+
+label {
+    margin-top: 15px;
+}
+
+input {
+    width: 20%;
+    border: none;
+    border-bottom: 2px solid white;
+    height: 28px;
+    padding: 12px 20px;
+    color: #ffffff;
+    background-color: #161515;
+    outline: none;
+}
+
+input {
+    width: 100%;
+    outline: none;
+    box-sizing: border-box;
+    height: 40px;
+    background-color: #161515;
+    border-bottom: 2px solid white;
+}
+
+input:hover {
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    height: 40px;
+    background-color: #161515;
+    border-bottom: 2px solid white;
+}
+
+textarea {
+    width: 630px;
+    height: 106px;
+    border: none;
+    outline: none;
+    background-color: #161515;
+    border-bottom: 2px solid white;
+}
+
+button {
+    padding: 10px;
+    color: wheat;
+    background-color: red;
+}

@@ -1,0 +1,19 @@
+/* .main_body {
+    position: relative;
+    width: 95%;
+    margin: auto;
+} */
+
+h1 {
+    font-size: 200px;
+    line-height: 0.7em;
+    padding-left: 40px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    line-height: 192px;
+    margin-top: 35px;
+    margin-bottom: 30px;
+    padding-bottom: 25px;
+    letter-spacing: normal;
+    width: 939;
+}
