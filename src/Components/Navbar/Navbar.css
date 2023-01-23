@@ -38,7 +38,7 @@ nav ol li {
     justify-content: flex-end;
 }
 
-a {
+.navlink ol li a {
     font-size: 17px;
     color: white;
     text-decoration: none;
