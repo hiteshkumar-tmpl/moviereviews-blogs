@@ -1,23 +1,9 @@
-import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "../Navbar/Navbar.css";
 import { BsSearch } from "react-icons/bs";
 import logo from "../Navbar/onmyscreen.png";
 
 const Navbar = () => {
-  /*
-  const [value, setValue] = useState([""]);
-
-  const onChange = (event) => {
-    setValue(event.target.value);
-  };
-
-  const onSearch = (searchTerm) => {
-    setValue(searchTerm);
-    // API to fetch the search result
-    console.log("search", searchTerm);
-  };*/
-
   return (
     <div>
       <div className="navbar">

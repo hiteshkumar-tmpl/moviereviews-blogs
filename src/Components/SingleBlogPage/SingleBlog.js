@@ -1,8 +1,8 @@
 import React from "react";
 import "../SingleBlogPage/singlepage.css";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 const SingleBlog = () => {
-  const { id } = useParams();
+  // const { id } = useParams();
 
   return (
     <>
