@@ -1,5 +1,5 @@
 import React from 'react'
-import '../Components/CSS/Feedbackform.css'
+import '../Components/Footer/Feedbackform.css'
 const Feedbackform = () => {
   return (
     <div className='container'>

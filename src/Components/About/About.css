@@ -1,0 +1,60 @@
+.about_main_container {
+    width: 100%;
+    padding: 20px 60px;
+    font-family: 'Sen', sans-serif;
+}
+
+.aboutme_heading {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.aboutme_data {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 100px;
+}
+
+.authorphoto img {
+    width: 474px;
+    height: 605px;
+    margin-left: 65px;
+}
+
+.authordiscrption {
+    position: static;
+    display: grid;
+    height: auto;
+    width: 709.6px;
+    min-height: 608px;
+    grid-template-rows: repeat(2, min-content) 1fr;
+    grid-template-columns: 100%;
+    margin-bottom: 50px;
+}
+
+.authordiscrption_title h2 {
+    font-size: 46px;
+    color: white;
+    font-weight: 600;
+    padding-top: 100px;
+    padding-left: 150px;
+    padding-bottom: 0px;
+    margin: 0px;
+}
+
+.authortagline p {
+    font-size: 20px;
+    font-weight: 800;
+    margin-left: 150px;
+    margin-bottom: 0px;
+}
+
+.maindiscrption {
+    width: 490px;
+    align-items: center;
+    font-family: 'Times New Roman', Times, serif;
+    justify-content: center;
+    font-size: 17px;
+    margin-left: 150px;
+}

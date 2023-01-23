@@ -1,6 +1,6 @@
 import React from 'react'
-import { Form } from 'react-router-dom'
 
+import { NavLink } from 'react-router-dom'
 const Error = () => {
   return (
     <div id="error-page">
@@ -15,8 +15,13 @@ const Error = () => {
           Sorry, the page you're looking for doesn't exist. If you think something is broken, report a problem.
        </p>
        <div class="btns">
-          <a href="https://www.codingnepalweb.com/">return home</a>
-          <a href="https://www.codingnepalweb.com/">report problem</a>
+       <NavLink
+       exact
+       to="/"
+       className={({ isActive }) => (isActive ? "active" : "inactive")}
+        >
+       RETURN HOME
+        </NavLink>
        </div>
     </div>
  </div>
