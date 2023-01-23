@@ -2,7 +2,7 @@
     margin-top: 50px;
     margin-bottom: 25px;
     width: 100%;
-    padding-left: 40px;
+    padding: 50px;
 }
 
 .footer_container {
@@ -34,7 +34,7 @@
     grid-column-start: 2;
     grid-column-end: 4;
     background-color: blue;
-    margin-right: 50px;
+    /* margin-right: 50px; */
     background-color: #161515;
     align-items: center;
     justify-content: center;
@@ -45,7 +45,6 @@
         margin-top: 50px;
         margin-bottom: 25px;
         width: 100%;
-        padding-left: 40px;
     }
     .footer_container {
         display: flex;
@@ -59,7 +58,6 @@
         background-color: #eb0000;
         align-items: center;
         justify-items: center;
-        margin-right: 50px;
         /* margin-left: 50px; */
     }
     .banner h2 {
@@ -75,7 +73,6 @@
         grid-column-start: 2;
         grid-column-end: 4;
         background-color: blue;
-        margin-right: 50px;
         background-color: #161515;
         align-items: center;
         justify-content: center;

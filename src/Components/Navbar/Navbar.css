@@ -14,6 +14,23 @@ nav {
     align-items: center;
 }
 
+@media (width <=1450px) {
+    .navbar {
+        max-width: 100%;
+        padding: 50px 40px;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+    nav {
+        display: flex;
+        max-width: 100%;
+        background: rgb(0, 0, 0);
+        position: relative;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
 
 /* nav .icon {
     background-color: red;
@@ -92,6 +109,72 @@ NavLink:active {
     color: red;
 }
 
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar,
+.cross {
+    font-size: 25px;
+    color: white;
+}
+
+
+/*   /////////////Navbar Tablet Responsive/////////////   */
+
+@media (width<=850px) {
+    .hamburger {
+        display: block;
+        margin: 16px 0px;
+    }
+    .navlink {
+        display: flex;
+        color: black;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 30px;
+        place-items: center;
+        position: fixed;
+        top: 100px;
+        right: -300px;
+        width: 300px;
+        height: 40%;
+        box-shadow: 0 40px 60px rgba(255, 254, 254, 0.1);
+        background-color: #000000;
+        padding: 40px 0 0 10px;
+        transition: 0.4s ease-in-out;
+        -webkit-transition: 0.4s ease-in-out;
+    }
+    .nav-active {
+        right: 0px;
+    }
+    .active {
+        padding-bottom: 20px;
+    }
+    .website-logo {
+        width: 35%;
+    }
+    nav ol {
+        display: flex;
+        list-style: none;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin: auto;
+        margin-right: 10px;
+    }
+    .navlink ol li a {
+        font-size: 17px;
+        color: rgb(230, 230, 230);
+        text-decoration: none;
+        font-family: "Poppins", sans-serif;
+        font-weight: bold;
+        padding: 5px 10px;
+    }
+}
+
 
 /* 
 nav li {
@@ -107,9 +190,3 @@ a {
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
 } */
-
-@media (width<=1450px) {
-    .navbar {
-        display: none;
-    }
-}
