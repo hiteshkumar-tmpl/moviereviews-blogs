@@ -32,8 +32,6 @@ const Navbar = () => {
                 <BsSearch />
               </button>
             </div>
-
-            <div className="dropdown"></div>
           </div>
           <div className={showIcon ? "navlink nav-active" : "navlink"}>
             <ol>
@@ -97,6 +95,19 @@ const Navbar = () => {
             </button>
           </div>
         </nav>
+      </div>
+      <div className="searchcontainer2">
+        <div className="searchbox">
+          <input
+            type="search"
+            name="search"
+            id="searchbar"
+            placeholder="Search..."
+          />
+          <button className="button">
+            <BsSearch />
+          </button>
+        </div>
       </div>
     </div>
   );

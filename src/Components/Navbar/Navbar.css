@@ -42,6 +42,10 @@ nav {
     font-weight: bold;
 } */
 
+.searchcontainer2 {
+    display: none;
+}
+
 nav ol {
     display: flex;
     list-style: none;
@@ -137,15 +141,37 @@ NavLink:active {
         gap: 30px;
         place-items: center;
         position: fixed;
-        top: 100px;
+        z-index: 999;
+        top: 120px;
         right: -300px;
         width: 300px;
-        height: 40%;
-        box-shadow: 0 40px 60px rgba(255, 254, 254, 0.1);
+        height: 70%;
+        box-shadow: 0 40px 60px rgba(79, 0, 0, 0.1);
         background-color: #000000;
         padding: 40px 0 0 10px;
         transition: 0.4s ease-in-out;
         -webkit-transition: 0.4s ease-in-out;
+    }
+    .searchcontainer {
+        display: none;
+    }
+    .searchcontainer2 {
+        display: flex;
+        width: 100%;
+        padding: 0px 50px;
+    }
+    .searchbox {
+        width: 100%;
+    }
+    .searchbox input {
+        border: none;
+        outline: none;
+        background: black;
+        color: white;
+        height: 100%;
+        padding: 0 10px;
+        font-size: 17px;
+        width: 100%;
     }
     .nav-active {
         right: 0px;
@@ -172,6 +198,17 @@ NavLink:active {
         font-family: "Poppins", sans-serif;
         font-weight: bold;
         padding: 5px 10px;
+    }
+    searchbox:hover {
+        border: 1px solid white;
+        color: white;
+        font-weight: bold;
+    }
+    .searchcontainer2 .searchbox button {
+        color: white;
+        border: none;
+        background: black;
+        padding: 0px 0px;
     }
 }
 

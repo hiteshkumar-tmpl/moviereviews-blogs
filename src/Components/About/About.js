@@ -1,6 +1,6 @@
 import React from "react";
-import '../About/About.css';
-import photo from '../About/authorabtpg.png'
+import "../About/About.css";
+import photo from "../About/authorabtpg.png";
 
 const About = () => {
   return (
@@ -10,10 +10,11 @@ const About = () => {
         <hr />
 
         <div className="aboutme_data">
-          <div className="authorphoto">
-            <img src={photo} alt = "Author"></img>
+          <div className="photoside">
+            <div className="authorphoto">
+              <img src={photo} alt="Author"></img>
+            </div>
           </div>
-
           <div className="authordiscrption">
             <div className="authordiscrption_title">
               <h2>Hi! I’m Jane</h2>
@@ -29,15 +30,14 @@ const About = () => {
               me anywhere you like on your page. I’m a great place for you to
               tell a story and let your users know a little more about you.
               <p>
-              This is a great space to write long text about your company and
-              your services. You can use this space to go into a little more
-              detail about your company. Talk about your team and what services
-              you provide. Tell your visitors the story of how you came up with
-              the idea for your business and what makes you different from your
-              competitors. Make your company stand out and show your visitors
-              who you are.
+                This is a great space to write long text about your company and
+                your services. You can use this space to go into a little more
+                detail about your company. Talk about your team and what
+                services you provide. Tell your visitors the story of how you
+                came up with the idea for your business and what makes you
+                different from your competitors. Make your company stand out and
+                show your visitors who you are.
               </p>
-         
             </div>
           </div>
         </div>
