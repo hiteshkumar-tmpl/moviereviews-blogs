@@ -344,3 +344,12 @@ textarea {
         border-bottom: 2px solid white;
     }
 }
+
+@media (width <=450px) {
+    .main {
+        margin-top: 50px;
+        margin-bottom: 25px;
+        width: 100%;
+        padding: 20px 0px 0px 20px;
+    }
+}
