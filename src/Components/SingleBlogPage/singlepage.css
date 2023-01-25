@@ -27,12 +27,16 @@
     display: flex;
     justify-content: flex-start;
     margin-top: 30px;
-    margin-left: -36px;
+    margin-left: -30px;
 }
 
 .singledateandtime ul li {
     margin: 5px 8px;
     font-size: 14px;
+}
+
+.aboveimage {
+    padding-bottom: 15px;
 }
 
 .blogimage {
@@ -53,7 +57,6 @@
     font-size: 18px;
     font-weight: bold;
     font-family: "Times New Roman", Times, serif;
-    padding: 12px;
 }
 
 .blogcontent {
@@ -103,7 +106,7 @@
 
 .readmorebutton {
     display: flex;
-    /* justify-content: center; */
+    justify-content: center;
     margin-top: 6px;
     padding: 24px 26px;
     font-size: 29px;
@@ -248,6 +251,11 @@ hr {
         font-family: "Times New Roman", Times, serif;
         padding: 12px 0px;
     }
+    .shortdesc p {
+        width: 100%;
+        margin-right: 23px;
+        padding: 9px 19px;
+    }
     .sidebar {
         display: flex;
         width: 96%;
@@ -261,14 +269,142 @@ hr {
         justify-content: space-evenly;
         align-content: stretch;
     }
+    .readmorebutton {
+        display: flex;
+        /* justify-content: center; */
+        margin-top: 6px;
+        padding: 16px 112px;
+        font-size: 29px;
+    }
+    .sidebar hr {
+        width: 93%;
+    }
     .photo {
-        width: 60%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
         height: 100%;
+        padding-right: 55px;
     }
     .photo img {
         width: 60%;
         height: max-content;
         margin-left: 20px;
         margin-top: 20px;
+    }
+    .pa {
+        display: flex;
+        justify-content: center;
+        font-size: 30px;
+        padding: 0px 12px;
+        /* margin-top: 0; */
+        margin: 0;
+        padding-top: 35px;
+    }
+    .pa a {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding-left: 20px;
+    }
+    .postsarchive button {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        margin-right: 40px;
+        padding: 14px 12px;
+        font-size: 15px;
+        margin-left: 15px;
+    }
+}
+
+@media (width<=768px) {
+    .single_blog_container {
+        background-color: black;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .single_blog_mainblog {
+        width: 100%;
+        color: aliceblue;
+        background-color: rgb(0, 0, 0);
+        padding-top: 40px;
+        padding-right: 20px;
+        padding-left: 20px;
+        font-family: "Times New Roman", Times, serif;
+        /* margin-left: 250px; */
+    }
+    .shortdesc {
+        font-size: 18px;
+        font-weight: bold;
+        font-family: "Times New Roman", Times, serif;
+        padding: 12px 0px;
+    }
+    .shortdesc p {
+        width: 100%;
+        margin-right: 23px;
+        padding: 9px 19px;
+    }
+    .sidebar {
+        display: flex;
+        width: 96%;
+        margin-left: 20px;
+        height: -moz-fit-content;
+        height: fit-content;
+        /* margin-right: 60px; */
+        background-color: #161515;
+        flex-direction: column;
+        align-items: baseline;
+        justify-content: space-evenly;
+        align-content: stretch;
+    }
+    .readmorebutton {
+        display: flex;
+        /* justify-content: center; */
+        margin-top: 6px;
+        padding: 16px 112px;
+        font-size: 29px;
+    }
+    .sidebar hr {
+        width: 93%;
+    }
+    .photo {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        padding-right: 55px;
+    }
+    .photo img {
+        width: 60%;
+        height: max-content;
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+    .pa {
+        display: flex;
+        justify-content: center;
+        font-size: 30px;
+        padding: 0px 12px;
+        /* margin-top: 0; */
+        margin: 0;
+        padding-top: 35px;
+    }
+    .pa a {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding-left: 20px;
+    }
+    .postsarchive button {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        margin-right: 40px;
+        padding: 14px 12px;
+        font-size: 15px;
+        margin-left: 15px;
     }
 }

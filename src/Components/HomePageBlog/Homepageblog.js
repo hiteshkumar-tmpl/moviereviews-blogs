@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+// import axios from "axios";
 import { Link } from "react-router-dom";
 import "../HomePageBlog/Homepageblog.css";
+import moment from "moment/moment";
 const Homepageblog = () => {
   /* useEffect(() => {
     /* API
@@ -11,7 +13,15 @@ const Homepageblog = () => {
     setposts(data);
   }, []);
   const [posts, setposts] = useState([]);*/
-  const posts = [
+
+  const [blogs, setBlogs] = useState([]);
+  useEffect(() => {
+    fetch("https://onmyscreen.onrender.com/blogs")
+      .then((response) => response.json())
+      .then((data) => setBlogs(data));
+  }, []);
+
+  /*const posts = [
     {
       id: 1,
       title: "My Top 5 Movies of All Times 1",
@@ -98,28 +108,28 @@ const Homepageblog = () => {
       desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur quidem velit quaerat numquam architecto autem minima quos dolor deleniti dicta!",
       img: "https://static.wixstatic.com/media/e1bade_9fe85efbfd56405ba1bf8a81e3495206~mv2.jpg/v1/fill/w_836,h_1096,fp_0.50_0.50,q_90,enc_auto/e1bade_9fe85efbfd56405ba1bf8a81e3495206~mv2.jpg",
     },
-  ];
+  ];*/
 
   return (
     <div className="mainbody">
       <div class="containerblog">
-        {posts.map((post) => (
-          <div className="post" key={post.id}>
+        {blogs.map((posts) => (
+          <div className="post" key={posts.id}>
             <div className="home_page_blog_image">
-              <img src={post.img} alt="" />
+              <img src={posts.bannerImgLink} alt="" />
             </div>
             <div className="hpdateandtime">
               <ul>
-                <p>Nov 29, 2022</p>
-                <li>1 Min</li>
+                <p>{moment(posts.uploadTime).format("MMM Do YY")}</p>
+                <li>{posts.readTime}</li>
               </ul>
             </div>
             <div className="Titlebox">
               <h2>
-                <Link to={`/blog/${post.id}`}> {post.title} </Link>
+                <Link to={`/blog/${posts.id}`}> {posts.title} </Link>
               </h2>
               <p>
-                <Link to={`/blog/${post.id}`}> {post.desc}</Link>
+                <Link to={`/blog/${posts.id}`}> {posts.shortDescription}</Link>
               </p>
             </div>
           </div>
