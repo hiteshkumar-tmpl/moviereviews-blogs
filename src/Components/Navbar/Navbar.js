@@ -1,8 +1,8 @@
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import "../Navbar/Navbar.css";
 import { BsSearch } from "react-icons/bs";
 import logo from "../Navbar/onmyscreen.png";
-import { useState } from "react";
 import { FiAlignJustify } from "react-icons/fi";
 import { RxCross2 } from "react-icons/rx";
 
@@ -96,6 +96,7 @@ const Navbar = () => {
           </div>
         </nav>
       </div>
+
       <div className="searchcontainer2">
         <div className="searchbox">
           <input
