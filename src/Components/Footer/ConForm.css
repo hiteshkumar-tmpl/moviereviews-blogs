@@ -42,7 +42,7 @@
 
 .form {
     margin-top: 100px;
-    padding: 0px 100px;
+    padding: 0px 170px;
 }
 
 .firstrow {
@@ -214,6 +214,7 @@ textarea {
         padding-bottom: 20px;
     }
     .main .form .firstrow .lastname {
+        padding-top: 20px;
         width: 100%;
     }
     .main .form .emailbar {

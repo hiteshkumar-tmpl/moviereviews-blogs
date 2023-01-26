@@ -13,14 +13,18 @@ const Homepageblog = () => {
     setposts(data);
   }, []);
   const [posts, setposts] = useState([]);*/
-
   const [blogs, setBlogs] = useState([]);
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
+    setLoading(true);
     fetch("https://onmyscreen.onrender.com/blogs")
       .then((response) => response.json())
-      .then((data) => setBlogs(data));
+      .then((data) => {
+        setBlogs(data.blogs);
+        setLoading(false);
+      });
   }, []);
-
+  console.log(blogs, "hiiii-b");
   /*const posts = [
     {
       id: 1,
@@ -109,31 +113,37 @@ const Homepageblog = () => {
       img: "https://static.wixstatic.com/media/e1bade_9fe85efbfd56405ba1bf8a81e3495206~mv2.jpg/v1/fill/w_836,h_1096,fp_0.50_0.50,q_90,enc_auto/e1bade_9fe85efbfd56405ba1bf8a81e3495206~mv2.jpg",
     },
   ];*/
-
   return (
     <div className="mainbody">
       <div class="containerblog">
-        {blogs.map((posts) => (
-          <div className="post" key={posts.id}>
-            <div className="home_page_blog_image">
-              <img src={posts.bannerImgLink} alt="" />
+        {loading ? (
+          <div>...loading</div>
+        ) : blogs && blogs.length > 0 ? (
+          blogs.map((posts) => (
+            <div className="post" key={posts.id}>
+              <div className="home_page_blog_image">
+                <img src={posts.bannerImgLink} alt="" />
+              </div>
+              <div className="hpdateandtime">
+                <ul>
+                  <p>{moment(posts.uploadTime).format("MMM Do YY")}</p>
+                  <li>{posts.readTime}</li>
+                </ul>
+              </div>
+              <div className="Titlebox">
+                <h2>
+                  <Link to={`/blog/${posts.id}`}> {posts.title} </Link>
+                </h2>
+                <p>
+                  <Link to={`/blog/${posts.id}`}>
+                    {" "}
+                    {posts.shortDescription}
+                  </Link>
+                </p>
+              </div>
             </div>
-            <div className="hpdateandtime">
-              <ul>
-                <p>{moment(posts.uploadTime).format("MMM Do YY")}</p>
-                <li>{posts.readTime}</li>
-              </ul>
-            </div>
-            <div className="Titlebox">
-              <h2>
-                <Link to={`/blog/${posts.id}`}> {posts.title} </Link>
-              </h2>
-              <p>
-                <Link to={`/blog/${posts.id}`}> {posts.shortDescription}</Link>
-              </p>
-            </div>
-          </div>
-        ))}
+          ))
+        ) : null}
       </div>
     </div>
   );

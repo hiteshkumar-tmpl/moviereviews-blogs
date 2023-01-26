@@ -1,51 +1,76 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+import moment from "moment/moment";
 import "../SingleBlogPage/singlepage.css";
 import { Link } from "react-router-dom";
 const SingleBlog = () => {
-  // const { id } = useParams();
+  const { id } = useParams();
+  const API = `https://onmyscreen.onrender.com/blogs/getOne/${id}`;
+  const [data, setData] = useState([]);
+  const apiData = async () => {
+    await axios
+      .get(API)
+      .then((res) => {
+        setData(res.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+  useEffect(() => {
+    apiData();
+  }, []);
+  /*
+  const APII = `https://onmyscreen.onrender.com/blogs/about`;
+  const [about, setAbout] = useState([]);
+  const apiidata = async () => {
+    await axios
+      .get(APII)
+      .then((resp) => {
+        setAbout(resp.about);
+        console.log(about);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+  useEffect(() => {
+    apiidata();
+  }, []);
+*/
+  const [about, setAbout] = useState([]);
+  useEffect(() => {
+    fetch("https://onmyscreen.onrender.com/blogs/about")
+      .then((response) => response.json())
+      .then((data) => setAbout(data));
+  }, []);
 
   return (
     <>
       <div className="single_blog_container">
         <div className="single_blog_mainblog">
-          <div className="aboveimage">
+          <div className="aboveimage" key={data.id}>
             <div className="singledateandtime">
               <ul>
                 <li>Admin</li>
-                <li>29 Jan 2023</li>
-                <li>1 Min Read</li>
+                <li>{moment(data.uploadTime).format("MMM Do YY")}</li>
+                <li>{data.readTime}</li>
               </ul>
             </div>
-
             <div className="blogtitle">
-              <h3>My Top 5 Movies of All Times</h3>
+              <h3>{data.title}</h3>
             </div>
-
-            <div className="shortdesc">
-              Create a blog post subtitle that summarizes your post in a few
-              short, punchy sentences and entices your audience to continue
-              reading.
-            </div>
+            <div className="shortdesc">{data.shortDescription}</div>{" "}
           </div>
-
           <div className="blogimage">
-            <img
-              src="https://static.wixstatic.com/media/e1bade_23184f3845c3430c9243f61c3ce45293~mv2.jpg/v1/fill/w_733,h_733,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/e1bade_23184f3845c3430c9243f61c3ce45293~mv2.jpg"
-              alt=""
-            />
+            <img src={data.bannerImgLink} alt="" />
           </div>
           <div className="blogcontent">
-            Welcome to your blog post. Use this space to connect with your
-            readers and potential customers in a way that’s current and
-            interesting. Think of it as an ongoing conversation where you can
-            share updates about business, trends, news, and more.
+            {data.fullDescription}
             <span class="blank"></span>
             <div className="contentbox">
-              <p>
-                Do you have a design in mind for your blog? Whether you prefer a
-                trendy postcard look or you’re going for a more editorial style
-                blog - there’s a stunning layout for everyone.
-              </p>
+              <p>{data.fact}</p>
             </div>
             <span className="blank"></span>
             <p>
@@ -54,75 +79,49 @@ const SingleBlog = () => {
               explore more of what interests them.
             </p>
             <span className="blank"> </span>
-            <h6>Create Relevant Content</h6>
+            <h6>{data.title1}</h6>
             <span className="blank"> </span>
-            <p>
-              Writing a blog is a great way to position yourself as an authority
-              in your field and captivate your readers’ attention. Do you want
-              to improve your site’s SEO ranking? Consider topics that focus on
-              relevant keywords and relate back to your website or business. You
-              can also add hashtags (#vacation #dream #summer) throughout your
-              posts to reach more people, and help visitors search for relevant
-              content.
-            </p>
+            <p>{data.fullDescription1}</p>
             <span className="blank"> </span>
-            <p>
-              Blogging gives your site a voice, so let your business’
-              personality shine through. Choose a great image to feature in your
-              post or add a video for extra engagement. Are you ready to get
-              started? Simply create a new post now.
-            </p>
+            <p>{data.fullDescription2}</p>
           </div>
+          <div />
         </div>
-
         <div className="sidebar">
-          <div className="aboutme">About Me</div>
-
-          <hr />
-
-          <div className="photo">
-            <img
-              src="https://static.wixstatic.com/media/e1bade_c9f7464c4b3f47328e7c4f26dbe60e77~mv2.jpg/v1/crop/x_599,y_1860,w_2402,h_3120/fill/w_250,h_325,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/About.jpg"
-              alt=""
-            />
-          </div>
-
-          <div className="shortdescs">
-            <p>
-              {" "}
-              I'm a paragraph. Click here to add your own text and edit me. It’s
-              easy. Just click “Edit Text” or double click me to add your own
-              content and make changes to the font.
-            </p>
-          </div>
-          <div className="readmorebutton">
-            <Link to="/about">
-              {" "}
-              <button>Read More</button>
-            </Link>
-          </div>
-
-          <hr />
-
-          <div className="postsarchive">
-            <h3 class="pa">Post Archive</h3>
-            <hr />
-
-            <Link href="#">
-              <button>November 2022 (9)</button>
-            </Link>
-            <hr />
-          </div>
-
-          <div className="tags">
-            <b>Tags</b>
-          </div>
-
-          <hr />
-
-          <div className="tagsbutton">
-            <button>Movie</button> <button>Review</button>
-          </div>
+          {about.map((aboutdata) => (
+            <>
+              <div className="aboutme">About Me</div>
+              <hr />
+              <div className="photo">
+                <img src={aboutdata.profileImageLink} alt="" />
+              </div>
+              <div className="shortdescs">
+                <p> {aboutdata.shortDescription}</p>
+              </div>
+              <div className="readmorebutton">
+                <Link to="/about">
+                  {" "}
+                  <button>Read More</button>
+                </Link>
+              </div>
+              <hr />
+              <div className="postsarchive">
+                <h3 class="pa">Post Archive</h3>
+                <hr />
+                <Link href="#">
+                  <button>November 2022 (9)</button>
+                </Link>
+                <hr />
+              </div>
+              <div className="tags">
+                <b>Tags</b>
+              </div>
+              <hr />
+              <div className="tagsbutton">
+                <button>{data.tags}</button> <button>Review</button>
+              </div>
+            </>
+          ))}
         </div>
       </div>
     </>
