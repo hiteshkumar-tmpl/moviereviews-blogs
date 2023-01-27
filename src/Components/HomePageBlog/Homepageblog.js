@@ -118,7 +118,7 @@ const Homepageblog = () => {
     <div className="mainbody">
       <div class="containerblog">
         {loading ? (
-          <div>
+          <div className="loader">
             <RiseLoader color="#ff0909" />
           </div>
         ) : blogs && blogs.length > 0 ? (

@@ -12,6 +12,11 @@
     column-width: 46%;
 }
 
+.loader {
+    display: flex;
+    justify-content: center;
+}
+
 .post {
     break-inside: avoid;
 }

@@ -13,14 +13,12 @@ const SingleBlog = () => {
 
   console.log(id, "hiii");
   useEffect(() => {
-    // apiData();
+    apiData();
+    //    eslint-disable-next-line
   }, []);
   const apiData = async () => {
     try {
       setLoading(true);
-      // setTimeout(() => {
-      //   setLoading(false);
-      // }, 5000); // 3000ms = 3 seconds
       const res = await axios.get(
         `https://onmyscreen.onrender.com/blogs/getOne/${id}`
       );
@@ -35,7 +33,6 @@ const SingleBlog = () => {
   console.log(data, "hklllll");
   return (
     <>
-      <h1>Hitesh</h1>
       {loading ? (
         <div className="loader">
           <RiseLoader color="#ff0909" />
@@ -99,7 +96,7 @@ const SingleBlog = () => {
             <div className="postsarchive">
               <h3 class="pa">Post Archive</h3>
               <hr />
-              <Link href="#">
+              <Link to="#">
                 <button>November 2022 (9)</button>
               </Link>
               <hr />
@@ -113,9 +110,7 @@ const SingleBlog = () => {
             </div>
           </div>
         </div>
-      ) : (
-        <div>"Hiiiiiii"</div>
-      )}
+      ) : null}
     </>
   );
 };

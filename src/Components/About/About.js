@@ -1,21 +1,27 @@
 import React, { useState, useEffect } from "react";
 import "../About/About.css";
+import { RiseLoader } from "react-spinners";
+
 const About = () => {
   const [about, setAbout] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     fetch("https://onmyscreen.onrender.com/blogs/about")
       .then((response) => response.json())
       .then((data) => {
-        setAbout(data.about);
+        setAbout(data);
+        setLoading(false);
       });
   }, []);
-  console.log(about, "Hello");
+
   return (
     <div>
       <div className="about_main_container">
         {loading ? (
-          <div>...Loading</div>
+          <div className="loader">
+            <RiseLoader color="#ff0909" />
+          </div>
         ) : (
           about.map((aboutdata) => (
             <div className="post" key={aboutdata.id}>
