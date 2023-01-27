@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../HomePageBlog/Homepageblog.css";
 import moment from "moment/moment";
+import { RiseLoader } from "react-spinners";
 const Homepageblog = () => {
   /* useEffect(() => {
     /* API
@@ -117,7 +118,9 @@ const Homepageblog = () => {
     <div className="mainbody">
       <div class="containerblog">
         {loading ? (
-          <div>...loading</div>
+          <div>
+            <RiseLoader color="#ff0909" />
+          </div>
         ) : blogs && blogs.length > 0 ? (
           blogs.map((posts) => (
             <div className="post" key={posts.id}>
