@@ -23,33 +23,31 @@ const About = () => {
             <RiseLoader color="#ff0909" />
           </div>
         ) : (
-          about.map((aboutdata) => (
-            <div className="post" key={aboutdata.id}>
-              <span className="aboutme_heading">ABOUT ME</span>
-              <hr />
-              <div className="aboutme_data">
-                <div className="photoside">
-                  <div className="authorphoto">
-                    <img src={aboutdata.profileImageLink} alt="Author"></img>
-                  </div>
+          <div className="post" key={about.id}>
+            <span className="aboutme_heading">ABOUT ME</span>
+            <hr />
+            <div className="aboutme_data">
+              <div className="photoside">
+                <div className="authorphoto">
+                  <img src={about.profileImageLink} alt="Author"></img>
                 </div>
-                <div className="authordiscrption">
-                  <div className="authordiscrption_title">
-                    <h2>{aboutdata.name}</h2>
-                  </div>
+              </div>
+              <div className="authordiscrption">
+                <div className="authordiscrption_title">
+                  <h2>{about.name}</h2>
+                </div>
 
-                  <div className="authortagline">
-                    <p>{aboutdata.shortDescription}</p>
-                  </div>
-                  <div className="maindiscrption">
-                    <p>{aboutdata.detailedDescription}</p>
+                <div className="authortagline">
+                  <p>{about.shortDescription}</p>
+                </div>
+                <div className="maindiscrption">
+                  <p>{about.detailedDescription}</p>
 
-                    <p>{aboutdata.detailedDescription1}</p>
-                  </div>
+                  <p>{about.detailedDescription1}</p>
                 </div>
               </div>
             </div>
-          ))
+          </div>
         )}
       </div>
     </div>

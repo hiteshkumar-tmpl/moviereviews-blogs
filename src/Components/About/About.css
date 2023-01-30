@@ -20,6 +20,7 @@
     width: 474px;
     height: 605px;
     margin-left: 65px;
+    object-fit: contain;
 }
 
 .authordiscrption {

@@ -5,13 +5,15 @@ import moment from "moment";
 import "../SingleBlogPage/singlepage.css";
 import { Link } from "react-router-dom";
 import { RiseLoader } from "react-spinners";
+import { BsFacebook } from "react-icons/bs";
+import { BsLinkedin } from "react-icons/bs";
+import { FiTwitter } from "react-icons/fi";
 
 const SingleBlog = () => {
   const { id } = useParams();
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  console.log(id, "hiii");
   useEffect(() => {
     apiData();
     //    eslint-disable-next-line
@@ -30,7 +32,7 @@ const SingleBlog = () => {
       setLoading(false);
     }
   };
-  console.log(data, "hklllll");
+
   return (
     <>
       {loading ? (
@@ -38,9 +40,9 @@ const SingleBlog = () => {
           <RiseLoader color="#ff0909" />
         </div>
       ) : data ? (
-        <div className="single_blog_container">
+        <div className="single_blog_container" key={data.id}>
           <div className="single_blog_mainblog">
-            <div className="aboveimage" key={data.id}>
+            <div className="aboveimage">
               <div className="singledateandtime">
                 <ul>
                   <li>Admin</li>
@@ -75,16 +77,65 @@ const SingleBlog = () => {
               <span className="blank"> </span>
               <p>{data.fullDescription2}</p>
             </div>
+            <div className="blogtags">
+              <button>Movie</button> <button>Review</button>
+            </div>
+
+            <hr />
+            <div className="socialmedialinks">
+              <span className="facebook">
+                <Link to="/facebook">
+                  <BsFacebook />
+                </Link>
+              </span>
+              <span className="twitter">
+                {" "}
+                <Link to="/twitter">
+                  <FiTwitter />
+                </Link>
+              </span>
+
+              <span className="linkedin">
+                {" "}
+                <Link to="/linkedin">
+                  <BsLinkedin />
+                </Link>
+              </span>
+            </div>
+            <div className="postsuggestion">
+              <div className="reacentpost_seeall">
+                <div className="reacent_posts">Recent Posts</div>
+                <div className="see_all">See All</div>
+              </div>
+              <div className="cards">
+                <div className="card1">
+                  <img
+                    src="https://static.wixstatic.com/media/e1bade_23184f3845c3430c9243f61c3ce45293~mv2.jpg/v1/fill/w_733,h_733,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/e1bade_23184f3845c3430c9243f61c3ce45293~mv2.jpg"
+                    alt="Image"
+                  />
+                  <p className="card_title">My Top 5 Movies of All Times</p>
+                </div>
+                <div className="card2">
+                  <img
+                    src="https://static.wixstatic.com/media/e1bade_9fe85efbfd56405ba1bf8a81e3495206~mv2.jpg/v1/fill/w_733,h_960,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/e1bade_9fe85efbfd56405ba1bf8a81e3495206~mv2.jpg"
+                    alt="Next Blog"
+                  />
+                  <p className="card_title">
+                    New Movies to Stream from Home This Week
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="sidebar">
             <div className="aboutme">About Me</div>
             <hr />
             <div className="photo">
-              <img src={" "} alt="" />
+              <img src={""} alt="" />
             </div>
             <div className="shortdescs">
-              <p> Hi</p>
+              <p> Hii Chick</p>
             </div>
             <div className="readmorebutton">
               <Link to="/about">

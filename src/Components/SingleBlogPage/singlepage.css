@@ -3,6 +3,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    font-family: "Sen", sans-serif;
 }
 
 .single_blog_mainblog {
@@ -21,6 +22,10 @@
     height: fit-content;
     margin-right: 60px;
     background-color: blue;
+}
+
+.postsarchive a {
+    text-decoration: none;
 }
 
 .singledateandtime ul {
@@ -55,8 +60,6 @@
 
 .shortdesc {
     font-size: 18px;
-    font-weight: bold;
-    font-family: "Times New Roman", Times, serif;
 }
 
 .blogcontent {
@@ -76,6 +79,49 @@
     border-left: 5px solid red;
 }
 
+.socialmedialinks {
+    text-decoration: none;
+    padding: 10px;
+}
+
+.socialmedialinks .twitter {
+    padding: 0px 30px;
+}
+
+.socialmedialinks li {
+    text-decoration: none;
+}
+
+.reacentpost_seeall {
+    display: flex;
+    justify-content: space-between;
+}
+
+.see_all,
+.reacent_posts {
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+}
+
+.cards {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 15px;
+}
+
+.cards img {
+    width: 309px;
+    height: 180px;
+    object-fit: none;
+}
+
+.card_title {
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    padding: 24px;
+}
+
 .sidebar {
     background-color: #161515;
     color: aliceblue;
@@ -93,6 +139,7 @@
     width: 200px;
     height: 240px;
     margin-left: 25px;
+    object-fit: contain;
     margin-top: 20px;
 }
 
@@ -242,13 +289,10 @@ hr {
         padding-top: 40px;
         padding-right: 20px;
         padding-left: 20px;
-        font-family: "Times New Roman", Times, serif;
         /* margin-left: 250px; */
     }
     .shortdesc {
         font-size: 18px;
-        font-weight: bold;
-        font-family: "Times New Roman", Times, serif;
         padding: 12px 0px;
     }
     .shortdesc p {
@@ -291,6 +335,7 @@ hr {
         height: max-content;
         margin-left: 20px;
         margin-top: 20px;
+        object-fit: contain;
     }
     .pa {
         display: flex;
@@ -333,13 +378,10 @@ hr {
         padding-top: 40px;
         padding-right: 20px;
         padding-left: 20px;
-        font-family: "Times New Roman", Times, serif;
         /* margin-left: 250px; */
     }
     .shortdesc {
         font-size: 18px;
-        font-weight: bold;
-        font-family: "Times New Roman", Times, serif;
         padding: 12px 0px;
     }
     .shortdesc p {
@@ -381,6 +423,7 @@ hr {
         width: 60%;
         height: max-content;
         margin-left: 20px;
+        object-fit: contain;
         margin-top: 20px;
     }
     .pa {

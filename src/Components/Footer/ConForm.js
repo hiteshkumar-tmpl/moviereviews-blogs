@@ -1,46 +1,28 @@
 import React, { useState } from "react";
 import "../Footer/ConForm.css";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const ConForm = () => {
-  /* const submitHandler = (event) => {
-    event.preventDefault();
-    const firstname = event.target.firstname.value;
-    const lastname = event.target.lastname.value;
-    const email = event.target.email.value;
-    const message = event.target.message.value;
-    axios.post("https://onmyscreen.onrender.com/blogs/feedback" {
-        firstname,
-        lastname,
-        email,
-        message,
-      })
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }; */
+  const showToastMessage = () => {
+    toast.success("Form has Submitted ", {
+      position: toast.POSITION.TOP_RIGHT,
+    });
+  };
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     email: "",
     reviews: "",
   });
-
-  // console.log(formData);
-
-  // const [anchor, setAnchor] = useState(false);
-
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
-
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
       .post("https://onmyscreen.onrender.com/blogs/feedback", formData)
-
       .then((response) => {
         // setAnchor((prev) => !prev);
         setFormData({
@@ -49,21 +31,37 @@ const ConForm = () => {
           email: "",
           reviews: "",
         });
-        alert("Form is Submitted");
+        toast.success("Form Submitted :)", {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
       })
       .catch((error) => {
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          reviews: "",
+        });
         // console.log(error);
+        toast.error("Please Try Again :(", {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
       });
   };
-
-  // useEffect(() => {
-  //   setFormData({
-  //     firstName: "",
-  //     lastName: "",
-  //     email: "",
-  //     reviews: "",
-  //   });
-  // }, [anchor]);
 
   return (
     <div className="main">
@@ -84,7 +82,6 @@ const ConForm = () => {
                   type="text"
                   id="firstName"
                   name="firstName"
-                  required
                   value={formData.firstName}
                   onChange={handleChange}
                 />
@@ -95,7 +92,6 @@ const ConForm = () => {
                   type="text"
                   id="lastName"
                   name="lastName"
-                  required
                   value={formData.lastName}
                   onChange={handleChange}
                 />
@@ -104,7 +100,7 @@ const ConForm = () => {
             <div className="emailbar">
               <label for="email">Email</label>
               <input
-                type="email"
+                type="text"
                 id="email"
                 required
                 name="email"
@@ -117,7 +113,6 @@ const ConForm = () => {
               <textarea
                 name="reviews"
                 id="reviews"
-                required
                 value={formData.reviews}
                 onChange={handleChange}
               ></textarea>
@@ -125,6 +120,7 @@ const ConForm = () => {
             <div className="formsubmitbutton">
               <button type="submit"> Submit</button>
             </div>
+            <ToastContainer />
           </form>
         </div>
       </div>

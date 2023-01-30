@@ -209,11 +209,10 @@ textarea {
         flex-direction: column;
         padding: 0px 0px;
     }
-    .main .form .firstrow .firstname {
+    .main .form .firstrow .firstName {
         width: 100%;
-        padding-bottom: 20px;
     }
-    .main .form .firstrow .lastname {
+    .main .form .firstrow .lastName {
         padding-top: 20px;
         width: 100%;
     }
@@ -307,7 +306,7 @@ textarea {
     .main .form .firstrow {
         display: flex;
         flex-direction: column;
-        padding: 0px px;
+        padding: 0px;
     }
     .main .form .firstrow .firstname {
         width: 100%;
@@ -369,5 +368,9 @@ textarea {
         justify-content: flex-end;
         margin-bottom: 50px;
         margin-top: 15px;
+    }
+    .main .form .firstrow .lastname {
+        padding-top: 20px;
+        width: 100%;
     }
 }
