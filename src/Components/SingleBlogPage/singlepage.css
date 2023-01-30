@@ -348,6 +348,7 @@ hr {
     }
     .shortdesc {
         font-size: 18px;
+        text-align: justify;
         padding: 12px 0px;
     }
     .shortdesc p {
