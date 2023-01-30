@@ -39,7 +39,7 @@ const About = () => {
                 </div>
 
                 <div className="authortagline">
-                  <p>Relationship Status - Its Complicated</p>
+                  <p>{about.shortDescription}</p>
                 </div>
                 <div className="maindiscrption">
                   <p>{about.detailedDescription}</p>
