@@ -12,32 +12,23 @@ const Navbar = () => {
   const handleClick = () => {
     setShowIcon(!showIcon);
   };
-  const [search, setSearch] = useState("");
+  const [searchTerm, setSearchTerm] = useState("Hiii");
   const [suggestions, setSuggestions] = useState([]);
 
   useEffect(() => {
-    const getSuggestions = async () => {
-      try {
-        const response = await axios.get(
-          `https://onmyscreen.onrender.com/blogs`
-        );
-        const data = response.data;
-        setSuggestions(data);
-      } catch (error) {
-        console.error(error);
-      }
+    const fetchData = async () => {
+      const response = await axios.get(
+        `https://onmyscreen.onrender.com/blogs/search?q=movie`
+      );
+      setSuggestions(response.data.title);
     };
-
-    if (search) {
-      getSuggestions();
-    } else {
-      setSuggestions([]);
-    }
-  }, [search]);
-
+    fetchData();
+  }, [searchTerm]);
+  console.log(searchTerm);
   const handleChange = (event) => {
-    setSearch(event.target.value);
+    setSearchTerm(event.target.value);
   };
+
   return (
     <div>
       <div className="navbar">
@@ -50,23 +41,17 @@ const Navbar = () => {
           <div className="searchcontainer">
             <div className="searchbox">
               <input
-                type="search"
-                name="search"
-                value={search}
+                type="text"
+                value={searchTerm}
                 onChange={handleChange}
-                placeholder="Search..."
+                placeholder="Search"
               />
-              <button className="button">
-                <BsSearch onClick={() => console.log("search")} />
-              </button>
-            </div>
-            {suggestions.length > 0 && (
               <ul>
-                {suggestions.map((suggestion) => (
+                {suggestions?.map((suggestion) => (
                   <li key={suggestion}>{suggestion}</li>
                 ))}
               </ul>
-            )}
+            </div>
           </div>
           <div className={showIcon ? "navlink nav-active" : "navlink"}>
             <ol>
