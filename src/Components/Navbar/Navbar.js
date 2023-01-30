@@ -19,7 +19,7 @@ const Navbar = () => {
     const getSuggestions = async () => {
       try {
         const response = await axios.get(
-          ` https://onmyscreen.onrender.com/blogs/search?q=${search}`
+          `https://onmyscreen.onrender.com/blogs`
         );
         const data = response.data;
         setSuggestions(data);
@@ -38,7 +38,6 @@ const Navbar = () => {
   const handleChange = (event) => {
     setSearch(event.target.value);
   };
-
   return (
     <div>
       <div className="navbar">
@@ -58,14 +57,16 @@ const Navbar = () => {
                 placeholder="Search..."
               />
               <button className="button">
-                <BsSearch />
+                <BsSearch onClick={() => console.log("search")} />
               </button>
             </div>
-            <ul>
-              {suggestions.map((suggestion) => (
-                <li key={suggestion}>{suggestion}</li>
-              ))}
-            </ul>
+            {suggestions.length > 0 && (
+              <ul>
+                {suggestions.map((suggestion) => (
+                  <li key={suggestion}>{suggestion}</li>
+                ))}
+              </ul>
+            )}
           </div>
           <div className={showIcon ? "navlink nav-active" : "navlink"}>
             <ol>

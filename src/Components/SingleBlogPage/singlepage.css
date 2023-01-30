@@ -12,7 +12,7 @@
     background-color: rgb(0, 0, 0);
     padding-top: 40px;
     padding-right: 100px;
-    font-family: "Times New Roman", Times, serif;
+    font-family: "Sen", sans-serif;
     padding-left: 10%;
     /* margin-left: 250px; */
 }
@@ -55,16 +55,18 @@
 }
 
 .blogtitle h3 {
-    font-size: 30px;
+    font-size: 35px;
 }
 
 .shortdesc {
-    font-size: 18px;
+    font-size: 16px;
+    font-weight: 800px;
 }
 
 .blogcontent {
     margin-top: 15px;
-    font-size: 18px;
+    font-size: 16px;
+    text-align: justify;
     line-height: 24px;
 }
 
@@ -76,7 +78,29 @@
 .contentbox p {
     padding: 10px 20px 10px 18px;
     box-sizing: border-box;
+    text-align: justify;
     border-left: 5px solid red;
+}
+
+.blogtags {
+    padding-top: 50px;
+}
+
+.postsuggestion a:hover {
+    color: red;
+}
+
+.blogtags button {
+    padding: 3px 14px;
+    background-color: black;
+    color: white;
+    border: none;
+}
+
+.blogtags button:hover {
+    cursor: pointer;
+    border: 1px solid;
+    color: white;
 }
 
 .socialmedialinks {
@@ -86,6 +110,15 @@
 
 .socialmedialinks .twitter {
     padding: 0px 30px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.blogending {
+    opacity: 50%;
+    margin-top: 30px;
 }
 
 .socialmedialinks li {
@@ -103,14 +136,27 @@
     font-family: "Poppins", sans-serif;
 }
 
+.postsuggestion {
+    padding-top: 50px;
+}
+
 .cards {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    column-gap: 30px;
     padding-top: 15px;
 }
 
+.card1 {
+    width: 100%;
+}
+
+.card2 {
+    width: 100%;
+}
+
 .cards img {
-    width: 309px;
+    width: 100%;
     height: 180px;
     object-fit: none;
 }
@@ -239,6 +285,15 @@ hr {
     color: black;
     font-size: 16px;
     background-color: white;
+    cursor: pointer;
+}
+
+.tagsbutton button:hover {
+    padding: 6px 8px;
+    margin-left: 30px;
+    color: black;
+    font-size: 16px;
+    background-color: rgb(255, 0, 0);
 }
 
 @media (width<=1450px) {
@@ -315,7 +370,8 @@ hr {
     }
     .readmorebutton {
         display: flex;
-        /* justify-content: center; */
+        width: 100%;
+        justify-content: center;
         margin-top: 6px;
         padding: 16px 112px;
         font-size: 29px;
@@ -449,5 +505,23 @@ hr {
         padding: 14px 12px;
         font-size: 15px;
         margin-left: 15px;
+    }
+}
+
+@media (width<=768px) {
+    .cards {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        column-gap: 30px;
+        padding-top: 15px;
+    }
+    a {
+        text-decoration: none;
+    }
+    .cards img {
+        width: 100%;
+        height: 250px;
+        object-fit: none;
     }
 }

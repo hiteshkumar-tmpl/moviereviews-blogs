@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../About/About.css";
 import { RiseLoader } from "react-spinners";
+import { Link } from "react-router-dom";
 
 const About = () => {
   const [about, setAbout] = useState([]);
@@ -14,7 +15,7 @@ const About = () => {
         setLoading(false);
       });
   }, []);
-
+  console.log(about);
   return (
     <div>
       <div className="about_main_container">
@@ -44,6 +45,12 @@ const About = () => {
                   <p>{about.detailedDescription}</p>
 
                   <p>{about.detailedDescription1}</p>
+
+                  <div className="myblog_button">
+                    <Link to="/">
+                      <button>My Blog</button>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>

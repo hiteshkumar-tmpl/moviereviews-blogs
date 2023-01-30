@@ -62,7 +62,7 @@ const ConForm = () => {
         });
       });
   };
-
+  console.log(showToastMessage);
   return (
     <div className="main">
       <div className="footer_container">
@@ -81,6 +81,7 @@ const ConForm = () => {
                 <input
                   type="text"
                   id="firstName"
+                  required
                   name="firstName"
                   value={formData.firstName}
                   onChange={handleChange}
@@ -91,6 +92,7 @@ const ConForm = () => {
                 <input
                   type="text"
                   id="lastName"
+                  required
                   name="lastName"
                   value={formData.lastName}
                   onChange={handleChange}
