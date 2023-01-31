@@ -16,7 +16,8 @@ const SingleBlog = () => {
   useEffect(() => {
     apiData();
     // eslint - disable - next - line;
-  }, []);
+  }, [id]);
+
   const apiData = async () => {
     try {
       setLoading(true);
