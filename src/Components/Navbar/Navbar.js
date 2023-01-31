@@ -78,6 +78,7 @@ const Navbar = () => {
               <button className="button">
                 <BsSearch />
               </button>
+
               {suggestions.length > 0 && (
                 <div className="suggestions">
                   {suggestions.map((suggestion) => (
@@ -179,6 +180,7 @@ const Navbar = () => {
           </button>
           {suggestions.length > 0 && (
             <div className="suggestions">
+              <h6>Search</h6>
               {suggestions.map((suggestion) => (
                 <div
                   key={suggestion.title}
