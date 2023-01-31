@@ -19,6 +19,11 @@ const ConForm = () => {
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
+
+  const test = { ...formData, email: "gyftdr" };
+  // console.log((formData["password"] = "hiiii"), formData);
+  console.log(test);
+
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
@@ -62,7 +67,7 @@ const ConForm = () => {
         });
       });
   };
-  console.log(showToastMessage);
+
   return (
     <div className="main">
       <div className="footer_container">

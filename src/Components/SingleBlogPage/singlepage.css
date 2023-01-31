@@ -38,6 +38,11 @@
 .singledateandtime ul li {
     margin: 5px 8px;
     font-size: 14px;
+    padding-right: 5px;
+}
+
+.singledateandtime ul li:nth-child(1) {
+    list-style: none;
 }
 
 .aboveimage {

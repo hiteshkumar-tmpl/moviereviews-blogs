@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "../Navbar/Navbar.css";
 import { BsSearch } from "react-icons/bs";
 import logo from "../Navbar/onmyscreen.png";
@@ -12,23 +12,52 @@ const Navbar = () => {
   const handleClick = () => {
     setShowIcon(!showIcon);
   };
-  const [searchTerm, setSearchTerm] = useState("Hiii");
+  const [userData, setUserdata] = useState([]);
+  const [filterdata, setFilterdata] = useState([]);
   const [suggestions, setSuggestions] = useState([]);
+  const [query, setQuery] = useState("");
 
   useEffect(() => {
-    const fetchData = async () => {
-      const response = await axios.get(
-        `https://onmyscreen.onrender.com/blogs/search?q=movie`
+    const getUserdata = async () => {
+      const reqData = await fetch(
+        `https://onmyscreen.onrender.com/blogs/search?q=${query}`
       );
-      setSuggestions(response.data.title);
+      const resData = await reqData.json();
+      console.log(resData);
+      setUserdata(resData);
+      setFilterdata(resData);
     };
-    fetchData();
-  }, [searchTerm]);
-  console.log(searchTerm);
-  const handleChange = (event) => {
-    setSearchTerm(event.target.value);
-  };
+    getUserdata();
+  }, [query]);
 
+  useEffect(() => {
+    if (query) {
+      const filtered = userData.filter((data) =>
+        data.title.toLowerCase().includes(query.toLowerCase())
+      );
+      setFilterdata(filtered);
+      setSuggestions(filtered.slice(0, 4));
+    } else {
+      setFilterdata(userData);
+      setSuggestions([]);
+    }
+  }, [query, userData]);
+
+  // const handlesearch = (event) => {
+  //   const getSearch = event.target.value;
+
+  //   console.log(getSearch);
+
+  //   if (getSearch.length > 0) {
+  //     const searchdata = userData.filter((item) =>
+  //       item.title.toUpperCase.includes(getSearch)
+  //     );
+  //     setUserdata(searchdata);
+  //   } else {
+  //     setUserdata(filterdata);
+  //   }
+  //   setQuery(getSearch);
+  // };
   return (
     <div>
       <div className="navbar">
@@ -42,15 +71,35 @@ const Navbar = () => {
             <div className="searchbox">
               <input
                 type="text"
-                value={searchTerm}
-                onChange={handleChange}
                 placeholder="Search"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
               />
-              <ul>
-                {suggestions?.map((suggestion) => (
-                  <li key={suggestion}>{suggestion}</li>
-                ))}
-              </ul>
+              <button className="button">
+                <BsSearch />
+              </button>
+              {suggestions.length > 0 && (
+                <div className="suggestions">
+                  {suggestions.map((suggestion) => (
+                    <div
+                      key={suggestion.title}
+                      // onClick={() => setQuery(" ")}
+                      className="suggestion"
+                    >
+                      <img src={suggestion.bannerImgLink} alt={" "} />
+                      <div className="suggestion-title">
+                        <Link
+                          to={`/blog/${suggestion.id}`}
+                          onClick={() => setQuery("")}
+                        >
+                          {" "}
+                          {suggestion.title}
+                        </Link>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
           <div className={showIcon ? "navlink nav-active" : "navlink"}>
@@ -120,14 +169,36 @@ const Navbar = () => {
       <div className="searchcontainer2">
         <div className="searchbox">
           <input
-            type="search"
-            name="search"
-            id="searchbar"
-            placeholder="Search..."
+            type="text"
+            placeholder="Search"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
           />
           <button className="button">
             <BsSearch />
           </button>
+          {suggestions.length > 0 && (
+            <div className="suggestions">
+              {suggestions.map((suggestion) => (
+                <div
+                  key={suggestion.title}
+                  //   onClick={() => setQuery(suggestion.title)}
+                  className="suggestion"
+                >
+                  <img src={suggestion.bannerImgLink} alt={suggestion.title} />
+                  <div className="suggestion-title">
+                    <Link
+                      to={`/blog/${suggestion.id}`}
+                      onClick={() => setQuery("")}
+                    >
+                      {" "}
+                      {suggestion.title}{" "}
+                    </Link>
+                  </div>{" "}
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </div>
