@@ -52,6 +52,8 @@ nav {
 
 .suggestion-title {
     font-size: 16px;
+    line-height: 22px;
+    text-align: left;
 }
 
 @media (width <=1450px) {
@@ -69,18 +71,41 @@ nav {
         justify-content: space-between;
         align-items: center;
     }
+    .suggestions {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        top: calc(78% + 10px);
+        left: 36%;
+        border: 1px solid white;
+        color: white;
+        background-color: rgb(0, 0, 0);
+        /* border: 1px solid #ccc; */
+        border-radius: 5px;
+        width: 19%;
+        box-shadow: 0 2px 4px rgb(0 0 0 / 20%);
+        z-index: 10;
+    }
 }
 
-
-/* nav .icon {
-    background-color: red;
-    padding: 20px;
-    margin-left: 20px;
-    /* display: flex;
-    justify-content: flex-start; 
-    font-size: 24px;
-    font-weight: bold;
-} */
+@media (max-width: 1024px) {
+    .suggestions {
+        background-color: #000;
+        border: 1px solid #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgb(0 0 0 / 20%);
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        left: 30.5%;
+        position: absolute;
+        top: calc(75% + 10px);
+        width: 27%;
+        z-index: 10;
+    }
+}
 
 .searchcontainer2 {
     display: none;
@@ -257,7 +282,25 @@ NavLink:active {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        top: calc(27% + 10px);
+        top: calc(30% + 10px);
+        left: 6.5%;
+        border: 1px solid white;
+        color: white;
+        background-color: rgb(0, 0, 0);
+        border-radius: 5px;
+        width: 87%;
+        box-shadow: 0 2px 4px rgb(0 0 0 / 20%);
+        z-index: 10;
+    }
+}
+
+@media (width<=415px) {
+    .suggestions {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        top: calc(30% + 10px);
         left: 6.5%;
         border: 1px solid white;
         color: white;
@@ -270,17 +313,40 @@ NavLink:active {
 }
 
 
-/* 
-nav li {
-    text-decoration: none;
-    height: 100px;
-    display: inline-block;
+/*
+@media (width<=393px) {
+    .suggestions {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        top: calc(30% + 10px);
+        left: 6.5%;
+        border: 1px solid white;
+        color: white;
+        background-color: rgb(0, 0, 0);
+        border-radius: 5px;
+        width: 87%;
+        box-shadow: 0 2px 4px rgb(0 0 0 / 20%);
+        z-index: 10;
+    }
 }
 
-a {
-    padding: 20px;
-    font-size: 17px;
-    color: white;
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
-} */
+@media (width<=350px) {
+    .suggestions {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        top: calc(30% + 10px);
+        left: 6.5%;
+        border: 1px solid white;
+        color: white;
+        background-color: rgb(0, 0, 0);
+        border-radius: 5px;
+        width: 87%;
+        box-shadow: 0 2px 4px rgb(0 0 0 / 20%);
+        z-index: 10;
+    }
+}
+*/

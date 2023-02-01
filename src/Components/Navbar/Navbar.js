@@ -70,7 +70,7 @@ const Navbar = () => {
           <div className="searchcontainer">
             <div className="searchbox">
               <input
-                type="text"
+                type="search"
                 placeholder="Search"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
@@ -170,7 +170,7 @@ const Navbar = () => {
       <div className="searchcontainer2">
         <div className="searchbox">
           <input
-            type="text"
+            type="search"
             placeholder="Search"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
