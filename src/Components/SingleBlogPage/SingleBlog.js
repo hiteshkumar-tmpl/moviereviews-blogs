@@ -22,7 +22,7 @@ const SingleBlog = () => {
     try {
       setLoading(true);
       const res = await axios.get(
-        `https://onmyscreen.onrender.com/blogs/getOne/${id}`
+        `https://onmyscreen-backend.onrender.com/blogs/getOne/${id}`
       );
       console.log(res, "res");
       setData(res.data);

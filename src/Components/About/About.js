@@ -8,7 +8,7 @@ const About = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://onmyscreen.onrender.com/blogs/about")
+    fetch("https://onmyscreen-backend.onrender.com/blogs/about")
       .then((response) => response.json())
       .then((data) => {
         setAbout(data);

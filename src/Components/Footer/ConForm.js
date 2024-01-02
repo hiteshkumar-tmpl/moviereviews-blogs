@@ -27,7 +27,7 @@ const ConForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
-      .post("https://onmyscreen.onrender.com/blogs/feedback", formData)
+      .post("https://onmyscreen-backend.onrender.com/blogs/feedback", formData)
       .then((response) => {
         // setAnchor((prev) => !prev);
         setFormData({

@@ -18,7 +18,7 @@ const Homepageblog = () => {
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     setLoading(true);
-    fetch("https://onmyscreen.onrender.com/blogs")
+    fetch("https://onmyscreen-backend.onrender.com/blogs")
       .then((response) => response.json())
       .then((data) => {
         setBlogs(data.blogs);
