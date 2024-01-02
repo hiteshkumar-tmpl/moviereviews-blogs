@@ -20,7 +20,7 @@ const Navbar = () => {
   useEffect(() => {
     const getUserdata = async () => {
       const reqData = await fetch(
-        `https://onmyscreen.onrender.com/blogs/search?q=${query}`
+        `https://onmyscreen-backend.onrender.com/blogs/search?q=${query}`
       );
       const resData = await reqData.json();
       console.log(resData);
